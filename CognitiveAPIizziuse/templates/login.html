@@ -1,10 +1,20 @@
+
+<meta charset="UTF-8">
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+	<title>Login Cognitive API</title>
 </head>
 <body>
-
+	<h1>Login</h1>
+	<form method="post">
+		{% csrf_token %}
+		<label for="username">Usuario:</label>
+		<input type="text" id="username" name="username"><br><br>
+		<label for="password">Contraseña:</label>
+		<input type="password" id="password" name="password"><br><br>
+		<input type="submit" value="Iniciar sesión">
+	</form>
+	<p>¿No tienes cuenta? <a href="{% url 'registro' %}">Regístrate</a></p>
 </body>
 </html>
