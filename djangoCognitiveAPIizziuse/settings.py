@@ -40,9 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'CognitiveAPIizziuse.apps.CognitiveapiizziuseConfig',
     'rest_framework',
     'rest_framework_simplejwt',
+    'CognitiveAPIizziuse',
 ]
 
 MIDDLEWARE = [
@@ -56,6 +56,13 @@ MIDDLEWARE = [
 ]
 CSRF_COOKIE_SECURE = True
 ROOT_URLCONF = 'djangoCognitiveAPIizziuse.urls'
+LOGIN_REDIRECT_URL = 'cognitive_home'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    # otros backends si los tienes
+]
+
 
 TEMPLATES = [
     {
@@ -82,9 +89,11 @@ WSGI_APPLICATION = 'djangoCognitiveAPIizziuse.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / "db.sqlite3",
     }
 }
+
+AUTH_USER_MODEL = 'CognitiveAPIizziuse.Usuario'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (

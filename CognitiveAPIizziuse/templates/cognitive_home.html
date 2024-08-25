@@ -1,12 +1,9 @@
-<!-- CognitiveAPIizziuse/templates/registro.html -->
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>Registro</title>
-</head>
-<body>
-<style>
+    <meta charset="UTF-8">
+    <title>Cognitive Home</title>
+    <style>
         body {
             background-color: #000;
             color: #33CC33;
@@ -29,11 +26,15 @@
             cursor: pointer;
         }
     </style>
-	<h1>Registro</h1>
-	<form method="post">
-		{% csrf_token %}
-		{{ form.as_p }}
-		<input type="submit" value="Registrarse">
-	</form>
+</head>
+<body>
+    <div class="container">
+        <h1>Cognitive Home</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="button">Enviar</button>
+        </form>
+    </div>
 </body>
 </html>
